@@ -1,0 +1,29 @@
+
+ion-card{
+    --background: transparent !important;
+    box-shadow: none;
+}
+
+ion-card > img{
+    border-radius: 18px 18px 0px 0px !important;
+}
+
+ion-card > h6{
+    margin-top:0px ;
+    margin-left:5%;
+    font-weight: bold;
+    font-style: italic;
+    border-radius: 18px !important;
+    padding-bottom: 5px;
+}
+
+ion-card > ion-label{
+    margin-top: 0px ;
+    margin-left:5%;
+}
+
+ion-card > ion-button{
+   position: absolute;
+   right: 10px;
+   --border-radius: 50%;
+}
