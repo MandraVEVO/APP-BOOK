@@ -1,0 +1,45 @@
+<app-header titulo="Detalles del Libro"></app-header>
+
+<ion-content [fullscreen]="true">
+  <div class="book-detail-container">
+    
+    <div class="book-image">
+      <img [src]="book.imagen" [alt]="book.titulo">
+    </div>
+    
+    <div class="book-field">
+      <h1>{{book.titulo}}</h1>
+    </div>
+    
+    <div class="book-field">
+      <h3>Descripción</h3>
+      <p>{{book.descripcion}}</p>
+    </div>
+    
+    <div class="book-field">
+      <h3>Género</h3>
+      <p>{{book.genero}}</p>
+    </div>
+    
+    <div class="book-field">
+      <h3>Número de páginas</h3>
+      <p>{{book.numeroPaginas}}</p>
+    </div>
+    
+    <div class="book-field">
+      <h3>Editorial</h3>
+      <p>{{book.editorial}}</p>
+    </div>
+    
+    <div class="book-field">
+      <h3>Fecha de publicación</h3>
+      <p>{{book.fechaPublicacion}}</p>
+    </div>
+    
+    <div class="book-field">
+      <h3>Disponibilidad</h3>
+      <p>{{book.disponibilidad}}</p>
+    </div>
+    
+  </div>
+</ion-content>

@@ -1,0 +1,200 @@
+ion-content {
+  --background: linear-gradient(145deg, #667eea 0%, #764ba2 100%);
+}
+
+.book-detail-container {
+  padding: 25px;
+  max-width: 650px;
+  margin: 20px auto;
+  background: linear-gradient(145deg, #ffffff 0%, #f8f9ff 100%);
+  border-radius: 25px;
+  box-shadow: 0 20px 40px rgba(102, 126, 234, 0.15), 
+              0 0 0 1px rgba(255, 255, 255, 0.1);
+  position: relative;
+  overflow: hidden;
+}
+
+.book-detail-container::before {
+  content: '';
+  position: absolute;
+  top: 0;
+  left: 0;
+  right: 0;
+  height: 4px;
+  background: linear-gradient(90deg, #667eea, #764ba2, #f093fb);
+  border-radius: 25px 25px 0 0;
+}
+
+.book-image {
+  text-align: center;
+  margin-bottom: 35px;
+  position: relative;
+}
+
+.book-image img {
+  max-width: 260px;
+  height: auto;
+  border-radius: 15px;
+  box-shadow: 0 15px 35px rgba(0, 0, 0, 0.2),
+              0 5px 15px rgba(0, 0, 0, 0.1);
+  transition: all 0.4s cubic-bezier(0.175, 0.885, 0.32, 1.275);
+  position: relative;
+  z-index: 1;
+  border: 3px solid #ffffff;
+}
+
+.book-image img:hover {
+  transform: scale(1.08) rotateY(5deg);
+  box-shadow: 0 20px 45px rgba(0, 0, 0, 0.25),
+              0 10px 20px rgba(0, 0, 0, 0.15);
+}
+
+.book-field {
+  margin-bottom: 25px;
+  background: linear-gradient(135deg, rgba(255, 255, 255, 0.95) 0%, rgba(248, 249, 255, 0.9) 100%);
+  padding: 20px;
+  border-radius: 18px;
+  border: 1px solid rgba(102, 126, 234, 0.1);
+  box-shadow: 0 8px 25px rgba(102, 126, 234, 0.08),
+              inset 0 1px 0 rgba(255, 255, 255, 0.8);
+  position: relative;
+  transition: all 0.3s ease;
+  backdrop-filter: blur(10px);
+}
+
+.book-field:hover {
+  transform: translateY(-2px);
+  box-shadow: 0 12px 35px rgba(102, 126, 234, 0.12),
+              inset 0 1px 0 rgba(255, 255, 255, 0.9);
+}
+
+.book-field::before {
+  content: '';
+  position: absolute;
+  left: 0;
+  top: 0;
+  bottom: 0;
+  width: 5px;
+  background: linear-gradient(180deg, #667eea, #764ba2);
+  border-radius: 18px 0 0 18px;
+}
+
+.book-field h1 {
+  margin: 0;
+  margin-bottom: 25px;
+  color: #2c3e50;
+  text-align: center;
+  font-size: 2.2em;
+  font-weight: 700;
+  text-shadow: 0 3px 6px rgba(0, 0, 0, 0.1);
+  background: linear-gradient(135deg, #667eea, #764ba2);
+  -webkit-background-clip: text;
+  -webkit-text-fill-color: transparent;
+  background-clip: text;
+  letter-spacing: -0.5px;
+  line-height: 1.2;
+}
+
+.book-field h3 {
+  margin: 0;
+  margin-bottom: 12px;
+  font-weight: 600;
+  color: #667eea;
+  font-size: 1.2em;
+  text-transform: uppercase;
+  letter-spacing: 1px;
+  position: relative;
+  display: flex;
+  align-items: center;
+}
+
+.book-field h3::after {
+  content: '';
+  flex: 1;
+  height: 2px;
+  background: linear-gradient(90deg, #667eea, transparent);
+  margin-left: 15px;
+  border-radius: 2px;
+}
+
+.book-field p {
+  margin: 0;
+  margin-bottom: 12px;
+  color: #34495e;
+  line-height: 1.7;
+  font-size: 1.05em;
+  font-weight: 400;
+  text-align: justify;
+}
+
+/* Estilos especiales para campos específicos */
+.book-field:nth-child(2) h1 {
+  background: none;
+  -webkit-text-fill-color: initial;
+  color: #2c3e50;
+}
+
+.book-field:nth-child(8) {
+  background: linear-gradient(135deg, #e8f5e8 0%, #f0fff0 100%);
+  border-color: #4caf50;
+}
+
+.book-field:nth-child(8)::before {
+  background: linear-gradient(180deg, #4caf50, #45a049);
+}
+
+.book-field:nth-child(8) h3 {
+  color: #4caf50;
+}
+
+.book-field:nth-child(8) h3::after {
+  background: linear-gradient(90deg, #4caf50, transparent);
+}
+
+.book-field:nth-child(8) p {
+  color: #2e7d32;
+  font-weight: 600;
+  text-transform: uppercase;
+  letter-spacing: 0.5px;
+}
+
+/* Animaciones de entrada */
+@keyframes fadeInUp {
+  from {
+    opacity: 0;
+    transform: translateY(30px);
+  }
+  to {
+    opacity: 1;
+    transform: translateY(0);
+  }
+}
+
+.book-field {
+  animation: fadeInUp 0.6s ease-out;
+}
+
+.book-field:nth-child(1) { animation-delay: 0.1s; }
+.book-field:nth-child(2) { animation-delay: 0.2s; }
+.book-field:nth-child(3) { animation-delay: 0.3s; }
+.book-field:nth-child(4) { animation-delay: 0.4s; }
+.book-field:nth-child(5) { animation-delay: 0.5s; }
+.book-field:nth-child(6) { animation-delay: 0.6s; }
+.book-field:nth-child(7) { animation-delay: 0.7s; }
+.book-field:nth-child(8) { animation-delay: 0.8s; }
+
+/* Responsive design */
+@media (max-width: 768px) {
+  .book-detail-container {
+    margin: 10px;
+    padding: 20px;
+  }
+  
+  .book-image img {
+    max-width: 220px;
+  }
+  
+  .book-field h1 {
+    font-size: 1.8em;
+  }
+}
