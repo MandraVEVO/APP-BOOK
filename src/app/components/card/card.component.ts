@@ -1,5 +1,5 @@
 import { CommonModule } from '@angular/common';
-import { Component, inject, OnInit } from '@angular/core';
+import { Component, inject, OnInit, Input } from '@angular/core';
 import { FormsModule } from '@angular/forms';
 import { IonLabel, IonIcon, IonButton, IonCard } from '@ionic/angular/standalone';
 import { ActionSheetController } from '@ionic/angular';
@@ -17,9 +17,9 @@ import { Router } from '@angular/router';
           <ion-icon slot="icon-only" name="ellipsis-vertical">
           </ion-icon>
         </ion-button>
-        <img (click)="toDetail()" src="https://blogger.googleusercontent.com/img/b/R29vZ2xl/AVvXsEjkf7i23obiQDg-PcF0RWPp3eKmKhPTZwE0M7qsIQiC3jjcOD-nGrx1Hlgl30CiOYfqx4tDYujdb86XhEq3UxhKVSsDrjaUtvhRe5mvtAP2u1rLgo_sMDsH6kWPMY5XBJRo-0PjcxyMWps/s640/El+libro+vaquero+Moderatto.png" alt="">
-        <h6>Pablo neruda</h6>
-        <ion-label>El libro vaquero</ion-label>
+        <img [src]="book?.image_url || 'imagen-default'" (click)="toDetail()">
+        <h6>{{book?.autor || 'Autor desconocido'}}</h6>
+        <ion-label>{{book?.titulo || 'Título por defecto'}}</ion-label>
         
 </ion-card>`,
   styles:`
@@ -56,6 +56,7 @@ ion-card > ion-button{
 export class  CardComponent  implements OnInit {
   private actionSheetCtrl = inject(ActionSheetController);
   private _router= inject(Router);
+  @Input() book: any;
   toDetail()
   {
     this._router.navigate(['/book-detail']);

@@ -1,17 +1,19 @@
 <app-header titulo="Tab1"></app-header>
 
 <ion-content [fullscreen]="true">
-   <ion-searchbar placeholder="Search" 
- type="decimal" 
+   <ion-searchbar placeholder="Buscar libros..." 
+ type="text" 
  (ionInput)="buscarLibro($event)" 
  [debounce]="250" 
  showCancelButton="always"
  ></ion-searchbar>
  <ion-grid>
   <ion-row>
-    <ion-col size="6">
-      <app-card></app-card>
-    </ion-col>
+    @for (libro of usuarios; track libro.id) {
+      <ion-col size="6">
+        <app-card [book]="libro"></app-card>
+      </ion-col>
+    }
   </ion-row>
  </ion-grid>
 </ion-content>
